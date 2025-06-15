@@ -80,10 +80,10 @@
       height: 60%;
       background: url('https://www.transparenttextures.com/patterns/paper-fibers.png') repeat;
       background-color: #fffdf0;
-      clip-path: polygon(0 100%, 50% 0, 100% 100%);
+      clip-path: polygon(0 0, 50% 100%, 100% 0);
       transform-origin: top;
       z-index: 3;
-      border-bottom: 2px solid #d4a373;
+      border-top: 2px solid #d4a373;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       display: flex;
       justify-content: center;
@@ -692,7 +692,6 @@
             <img src="f7.jpg" alt="Kỷ niệm 6" class="gallery-img" onclick="openLightbox(this.src)">
             <img src="f8.jpg" alt="Kỷ niệm 6" class="gallery-img" onclick="openLightbox(this.src)">
             <img src="f9.jpg" alt="Kỷ niệm 6" class="gallery-img" onclick="openLightbox(this.src)">
-            
           </div>
         </div>
       </div>
@@ -924,16 +923,16 @@
           ease: 'power2.inOut',
         });
 
-        // Add glow to flap and open it dramatically
+        // Add glow to flap and open it upward
         tl.to(envelopeFlap, {
-          rotateX: -180,
+          rotateX: 180,
           duration: 1.2,
           ease: 'back.out(1.8)',
           onStart: () => envelopeFlap.classList.add('glow'),
           onComplete: () => envelopeFlap.classList.remove('glow'),
         }, '-=0.2');
 
-        // Reveal content with scale and slide
+        // Reveal content with scale and slide upward
         tl.to(envelopeContent, {
           opacity: 1,
           translateY: -60,
